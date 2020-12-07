@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     # own
     "app",
     "app.users",
+    "app.social",
 ]
 
 MIDDLEWARE = [
@@ -134,7 +135,6 @@ REST_FRAMEWORK = {
         "rest_framework_simplejwt.authentication.JWTAuthentication",
         "rest_framework.authentication.SessionAuthentication",
     ],
-   
 }
 
 SIMPLE_JWT = {
