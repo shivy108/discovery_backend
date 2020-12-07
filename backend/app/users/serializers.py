@@ -14,10 +14,12 @@ class UserSerializer(serializers.ModelSerializer):
             "location",
             "first_name",
             "last_name",
-            "profile_picture",
-            "profile_description",
-            "current_position",
-            "medical_ID",
+            "avatar",
+            "medical_id",
             "medical_field",
+            "about_me",
+            "banner",
+            "liked_posts",
+            "followees",
         ]
         read_only_fields = ["email"]

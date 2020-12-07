@@ -1,6 +1,6 @@
 from django.db import models
 
-from app.social.models import Post
+from app.social.models.posts import Post
 
 
 class Image(models.Model):
