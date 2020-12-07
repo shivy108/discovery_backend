@@ -1,0 +1,19 @@
+name: discovery
+
+dependencies:
+  - python=3.7
+  - pip
+  - psycopg2
+  - pip:
+    - Django==3.0.2
+    - djangorestframework==3.11.0
+    - djangorestframework_simplejwt==4.4.0
+    - flake8
+    - coreapi
+    - Pillow
+    - django-cors-headers
+    - django-admin-honeypot
+    - django-extensions
+
+
+
