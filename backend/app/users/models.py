@@ -13,15 +13,9 @@ class User(AbstractUser):
     email = models.EmailField(unique=True)
     username = models.CharField(verbose_name="username", max_length=200, unique=True)
     first_name = models.CharField(
-        verbose_name="first name",
-        max_length=200,
-        blank=True,
+        verbose_name="first name", max_length=200, blank=True,
     )
-    last_name = models.CharField(
-        verbose_name="last name",
-        max_length=200,
-        blank=True,
-    )
+    last_name = models.CharField(verbose_name="last name", max_length=200, blank=True,)
     medical_id = models.CharField(verbose_name="medical ID", max_length=200, blank=True)
     is_staff = models.BooleanField(
         verbose_name="staff status",
@@ -38,15 +32,9 @@ class User(AbstractUser):
 
     ########################
     # Social Profile
-    avatar = models.ImageField(
-        upload_to="",
-        blank=True,
-    )
+    avatar = models.ImageField(upload_to="", blank=True,)
 
-    banner = models.ImageField(
-        upload_to="",
-        blank=True,
-    )
+    banner = models.ImageField(upload_to="", blank=True,)
 
     location = models.CharField(
         verbose_name="user location", max_length=200, blank=True
@@ -68,10 +56,7 @@ class User(AbstractUser):
     )
 
     liked_posts = models.ManyToManyField(
-        verbose_name="liked posts",
-        to=Post,
-        related_name="liked_by",
-        blank=True,
+        verbose_name="liked posts", to=Post, related_name="liked_by", blank=True,
     )
 
     @property
