@@ -27,4 +27,5 @@ urlpatterns = [
     ),
     path("api/token/verify/", jwt_views.TokenVerifyView.as_view(), name="token_verify"),
     path("api/users/", include("app.users.urls")),
+    path("api/social/", include("app.social.urls")),
 ]

@@ -1,10 +1,8 @@
 from rest_framework.generics import (
-    ListAPIView,
-    GenericAPIView,
-    ListCreateAPIView,
-    RetrieveUpdateDestroyAPIView,
+    ListCreateAPIView
 )
 from app.social.models.posts import Post
+from app.social.serializers.posts import PostSerializer
 
 
 class ListCreatePosts(ListCreateAPIView):
