@@ -3,6 +3,7 @@ from app.social.models.posts import Post
 from app.social.serializers.posts import PostSerializer, GetPostSerializer
 
 
+
 class ListCreatePosts(ListCreateAPIView):
     queryset = Post.objects.all().order_by("-created")
 
@@ -10,4 +11,3 @@ class ListCreatePosts(ListCreateAPIView):
         if self.request.method == "GET":
             return GetPostSerializer
         return PostSerializer
-

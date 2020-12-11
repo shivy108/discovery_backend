@@ -4,7 +4,7 @@ from app.users.serializers import UserSerializer
 
 
 class GetPostSerializer(serializers.ModelSerializer):
-    user = UserSerializer( read_only=True)
+    user = UserSerializer(read_only=True)
 
     class Meta:
         model = Post
