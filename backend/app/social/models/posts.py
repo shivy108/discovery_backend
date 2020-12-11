@@ -4,26 +4,21 @@ from django.db import models
 
 class Post(models.Model):
     user = models.ForeignKey(
-        verbose_name='user',
+        verbose_name="user",
         to=settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
-        related_name='posts',
+        related_name="posts",
     )
-    content = models.TextField(
-        verbose_name='content'
-    )
-    created = models.DateTimeField(
-        verbose_name='created',
-        auto_now_add=True,
-    )
+    content = models.TextField(verbose_name="content")
+    created = models.DateTimeField(verbose_name="created", auto_now_add=True,)
 
     shared = models.ForeignKey(
-        verbose_name='shared post',
-        to='self',
+        verbose_name="shared post",
+        to="self",
         on_delete=models.SET_NULL,
         null=True,
         blank=True,
-        related_name='sharing_posts'
+        related_name="sharing_posts",
     )
 
     def __str__(self):

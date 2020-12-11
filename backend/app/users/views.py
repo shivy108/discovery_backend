@@ -26,7 +26,7 @@ class ListUsers(ListAPIView):
 
 class RetrieveUser(RetrieveAPIView):
     """
-    Retrieve an user by ID
+    Retrieve a user by ID
     """
 
     serializer_class = UserSerializer
