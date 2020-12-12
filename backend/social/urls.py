@@ -1,5 +1,5 @@
 from django.urls import path, include
-from app.social.views.posts import ListCreatePosts
+from social.views.posts import ListCreatePosts
 
 
 post_patterns = [

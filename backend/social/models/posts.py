@@ -16,14 +16,14 @@ class Post(models.Model):
     content = models.TextField(verbose_name="content")
     created = models.DateTimeField(verbose_name="created", auto_now_add=True,)
 
-    shared = models.ForeignKey(
-        verbose_name="shared post",
-        to="self",
-        on_delete=models.SET_NULL,
-        null=True,
-        blank=True,
-        related_name="sharing_posts",
-    )
+    # shared = models.ForeignKey(
+    #     verbose_name="shared post",
+    #     to="self",
+    #     on_delete=models.SET_NULL,
+    #     null=True,
+    #     blank=True,
+    #     related_name="sharing_posts",
+    # )
 
-    def __str__(self):
-        return f"{self.user}: {self.content[:50]} ..."
+    # def __str__(self):
+    #     return f"{self.user}: {self.content[:50]} ..."

@@ -7,7 +7,7 @@ from rest_framework.generics import ListAPIView, RetrieveAPIView, GenericAPIView
 from rest_framework.permissions import IsAuthenticated
 
 
-from app.users.serializers import UserSerializer
+from users.serializers import UserSerializer
 from rest_framework.response import Response
 
 User = get_user_model()

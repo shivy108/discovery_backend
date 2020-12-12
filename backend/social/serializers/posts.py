@@ -1,10 +1,11 @@
-from app.social.models.posts import Post
 from rest_framework import serializers
-from app.users.serializers import UserSerializer
+
+from social.models.posts import Post
+from users.serializers import UserSerializer
 
 
 class GetPostSerializer(serializers.ModelSerializer):
-    user = UserSerializer(read_only=True)
+    user = UserSerializer(required=False, read_only=True)
 
     class Meta:
         model = Post
@@ -12,7 +13,7 @@ class GetPostSerializer(serializers.ModelSerializer):
 
 
 class PostSerializer(serializers.ModelSerializer):
-    user = UserSerializer(read_only=True)
+    user = UserSerializer(required=False, read_only=True)
 
     class Meta:
         model = Post

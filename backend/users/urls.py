@@ -1,6 +1,6 @@
 from django.urls import path
 
-from app.users.views import ListUsers, RetrieveUser, ListUpdateMeView
+from users.views import ListUsers, RetrieveUser, ListUpdateMeView
 
 urlpatterns = [
     
