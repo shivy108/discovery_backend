@@ -14,16 +14,6 @@ class Post(models.Model):
         related_name="posts",
     )
     content = models.TextField(verbose_name="content")
+    medical_field = models.CharField(
+        verbose_name="medical field", max_length=200, null=True)
     created = models.DateTimeField(verbose_name="created", auto_now_add=True,)
-
-    # shared = models.ForeignKey(
-    #     verbose_name="shared post",
-    #     to="self",
-    #     on_delete=models.SET_NULL,
-    #     null=True,
-    #     blank=True,
-    #     related_name="sharing_posts",
-    # )
-
-    # def __str__(self):
-    #     return f"{self.user}: {self.content[:50]} ..."

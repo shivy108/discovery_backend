@@ -27,6 +27,11 @@ class User(AbstractUser):
         max_length=200,
         blank=True
     )
+    current_position = models.CharField(
+        verbose_name='current postion',
+        max_length=200,
+        blank=True
+    )
     is_staff = models.BooleanField(
         verbose_name='staff status',
         default=False,
@@ -72,6 +77,60 @@ class User(AbstractUser):
         max_length=200,
         blank=True
     )
+
+    @property
+    def friends(self):
+        friends_profiles = []
+
+        received_requests = Friend.objects.filter(
+            receiver=self,
+            status='A'
+        )
+        for friend in received_requests:
+            friends_profiles.append(friend.requester)
+        requested_requests = Friend.objects.filter(
+            requester=self,
+            status='A'
+        )
+        for friend in requested_requests:
+            friends_profiles.append(friend.receiver)
+        return friends_profiles
+
+    @property
+    def friend_requests_received(self):
+        friends_profiles = []
+
+        received_requests = Friend.objects.filter(
+            receiver=self,
+            status='P'
+        )
+        for friend in received_requests:
+            friends_profiles.append(friend.requester)
+        return friends_profiles
+
+    @property
+    def friend_requests_sent(self):
+        friends_profiles = []
+
+        requested_requests = Friend.objects.filter(
+            requester=self,
+            status='P'
+        )
+        for friend in requested_requests:
+            friends_profiles.append(friend.receiver)
+        return friends_profiles
+
+    @property
+    def friend_requests_sent_rejected(self):
+        friends_profiles = []
+
+        rejected_requests = Friend.objects.filter(
+            requester=self,
+            status='R'
+        )
+        for friend in rejected_requests:
+            friends_profiles.append(friend.receiver)
+        return friends_profiles
 
     def __str__(self):
         return self.username
